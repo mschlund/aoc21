@@ -8,7 +8,6 @@ case class Position(var horizontal : Int, var depth : Int):
   def down(units: Int) =
     depth += units
     this
-  def getPos = (horizontal, depth)
 
 enum Direction:
   case Forward, Up, Down
