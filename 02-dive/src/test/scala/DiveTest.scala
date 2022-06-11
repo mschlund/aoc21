@@ -19,7 +19,7 @@ class DiveTest extends munit.FunSuite {
     val x = Position(0,0)
     x.forward(3)
     x.up(2)
-    assertEquals(x.getPos, (3,-2))
+    assertEquals(x, Position(3,-2))
   }
 
   test("Parse string-commands") {
@@ -29,5 +29,10 @@ class DiveTest extends munit.FunSuite {
   test("Example 1") {
     val start = Position(0,0)
     assertEquals(executeCommands(start, string2Commands(commands)), Position(15,10))
+  }
+
+  test("Example 2") {
+    val start = PositionWithAim(Position(0,0), 0)
+    assertEquals(executeCommandsWithAim(start, string2Commands(commands)), Position(15,60))
   }
 }
