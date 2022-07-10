@@ -1,6 +1,6 @@
 import better.files._
 
-@main def hello: Unit = 
+@main def hello: Unit =
   val input = File("resources/input")
   val dirs = determineIncDec(input.contentAsString)
   val dirsWin3 = determineIncDecSliding(input.contentAsString, 3)
